@@ -2,6 +2,7 @@ import { NAV_LINKS } from "@/constant/links";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/button";
+import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./ui/sheet";
 
 const Header = () => {
     return ( 
@@ -25,14 +26,35 @@ const Header = () => {
           variant="bg-zinc-900"
         />
       </div>
-
-      <Image 
+      <Sheet>
+      <SheetTrigger asChild>
+        <Image 
         src="menu.svg"
         alt="menu"
         width={32}
         height={32}
         className="inline-block cursor-pointer lg:hidden"
-      />
+        />
+        </SheetTrigger>
+        <SheetContent side="left" className="w-[21.875rem]">
+          <SheetHeader className="text-left text-lg font-semibold">
+            Menu
+          </SheetHeader>
+          <ul className=" flex flex-col lg:hidden">
+          {NAV_LINKS.map((link) => (
+          <Link href={link.href} key={link.key} className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500 flex justify-start cursor-pointer pb-1.5 transition-all hover:font-bold">
+            {link.label}
+          </Link>
+        ))}
+        <Button 
+          type="button"
+          title="Login"
+          icon="/user.svg"
+          variant="bg-zinc-900"
+        />
+      </ul>
+        </SheetContent>
+        </Sheet>
         </nav>
      );
 }
