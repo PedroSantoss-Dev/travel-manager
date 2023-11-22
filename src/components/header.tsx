@@ -8,14 +8,14 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 const Header = () => {
   return (
-    <nav className=" flex justify-between items-center container p-2 relative z-30 py-5 ">
-      <Link href="/" className=" flex items-center">
+    <nav className=" flex justify-between items-center container p-2 relative z-30 py-5 bg-transparent ">
+      <Link href="/" className=" flex items-center ">
         <Image src="/travel-logo.png" alt="logo" width={50} height={29} />
-        <strong className="text-transparent bg-clip-text bg-gradient-to-r  from-blue-500   to-green-500 ">Travel Manager</strong>
+        <strong className="text-transparent bg-clip-text bg-gradient-to-r  from-gray-800   to-green-700 ">Travel Manager</strong>
       </Link>
       <ul className="hidden h-full gap-12 lg:flex">
         {NAV_LINKS.map((link) => (
-          <Link href={link.href} key={link.key} className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500 flex justify-center cursor-pointer pb-1.5 transition-all hover:font-bold">
+          <Link href={link.href} key={link.key} className="text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-green-700 flex justify-center cursor-pointer pb-1.5 transition-all hover:font-bold">
             {link.label}
           </Link>
         ))}
