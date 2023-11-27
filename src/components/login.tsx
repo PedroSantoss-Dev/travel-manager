@@ -49,11 +49,6 @@ const LoginForm = ({ className, ...props }: UserAuthFormProps) => {
         } else {
           router.push("/");
         }
-    
-        // setTimeout(() => {
-        //   setIsLoading(false);
-        // }, 5000);
-    
         setData({
           email: "",
           password: "",
