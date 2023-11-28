@@ -1,10 +1,9 @@
 import { NAV_LINKS } from "@/constant/links";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "@/components/button";
+import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./ui/sheet";
-import LoginForm from "./login";
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import AuthButton from "./auth-button";
 
 const Header = () => {
   return (
@@ -21,19 +20,7 @@ const Header = () => {
         ))}
       </ul>
       <div className="lg:flex justify-center items-center mr-6 hidden">
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button
-              type="button"
-              title="Login"
-              icon="/user.svg"
-              variant="bg-zinc-900"
-            />
-          </PopoverTrigger>
-          <PopoverContent>
-            <LoginForm />
-          </PopoverContent>
-        </Popover>
+        <AuthButton btn="register"/>
       </div>
       <Sheet>
         <SheetTrigger asChild>
@@ -55,19 +42,13 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <Popover  >
-              <PopoverTrigger asChild>
                 <Button
-                  type="button"
                   title="Login"
-                  icon="/user.svg"
-                  variant="bg-zinc-900"
-                />
-              </PopoverTrigger>
-              <PopoverContent>
-                <LoginForm />
-              </PopoverContent>
-            </Popover>
+                  className=" rounded-full mt-5"
+                >
+                  <Image src="/user.svg" alt="logo user" width={24} height={24} />
+                  <strong> Login</strong>
+                </Button>
           </ul>
         </SheetContent>
       </Sheet>
