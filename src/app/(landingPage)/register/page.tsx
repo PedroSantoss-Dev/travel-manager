@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 export default async function Register() {
   return (
     <div className="container relative py-48 md:py-0  h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:flex lg:flex-row lg:px-0">
-      <AuthButton btn="register" />
       <div className="relative hidden h-full flex-col  p-10 text-white dark:border-r lg:flex">
         <Image src="/hero.png" alt="praia de maragogi" width={800} height={500} />
       </div>
@@ -30,6 +29,14 @@ export default async function Register() {
             </p>
           </div>
           <UserRegisterForm />
+          <p className=" text-gray-700 text-xs">
+            Já possui uma conta? &nbsp;&nbsp;
+            <Link 
+            href="/login"
+            className="text-gray-900">
+              Fazer login
+            </Link>
+          </p>
           <p className="px-8 text-center text-sm text-muted-foreground">
             By clicking continue, you agree to our{" "}
             <Link

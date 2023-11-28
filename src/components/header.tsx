@@ -20,7 +20,7 @@ const Header = () => {
         ))}
       </ul>
       <div className="lg:flex justify-center items-center mr-6 hidden">
-        <AuthButton btn="register"/>
+        <AuthButton btn="login"/>
       </div>
       <Sheet>
         <SheetTrigger asChild>
